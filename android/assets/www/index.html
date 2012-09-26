@@ -1,10 +1,76 @@
-<!DOCTYPE HTML>
+
+
+<!DOCTYPE html>
 <html>
-<head>
-<title>Cordova</title>
-<script type="text/javascript" charset="utf-8" src="cordova-1.9.0.js"></script>
-</head>
-<body>
-<h1>Hello World</h1>
-</body>
+  <head>
+        <title>Device Properties Example</title>
+    <!-- Meta Tage -->
+        <meta name="HandheldFriendly" content="True"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+       <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+      
+    <!-- Script Tags -->    
+        <script type="text/javascript" charset="utf-8" src="cordova-2.1.0.js"></script>
+
+
+  </head>
+  <body>
+<!--  THIS IS THE HOME PAGE -->
+      <div data-role="page" id="home" data-position="fixed" >
+          
+          <div data-role="header">
+              <h1>AVF - 1210 Joel J</h1>
+          </div>
+                  
+          <div data-role="content">
+              <a href="#ios" data-role="button">iOS Native Features</a>
+              <a href="#android" data-role="button">Android Native Features</a>
+
+          </div>
+                  
+          <div data-role="footer" data-position="fixed">
+              <h2>Footer</h2>
+          </div>
+                  
+      </div>
+<!--  THIS IS THE iOS PAGE -->
+      
+      <div data-role="page" id="ios" data-position="fixed" data-add-back-btn="true">
+          
+          <div data-role="header">
+              <h1>AVF - 1210 Joel J</h1>
+          </div>
+          
+          <div data-role="content">
+              <p>iOS PAGE</p>
+          </div>
+          
+          <div data-role="footer" data-position="fixed">
+              <h2>Footer</h2>
+          </div>
+          
+      </div>
+<!--  THIS IS THE Android PAGE -->
+      
+      <div data-role="page" id="android" data-position="fixed" data-add-back-btn="true">
+          
+          <div data-role="header">
+              <h1>AVF - 1210 Joel J</h1>
+          </div>
+          
+          <div data-role="content">
+              <p>Android PAGE</p>
+          </div>
+          
+          <div data-role="footer" data-position="fixed">
+              <h2>Footer</h2>
+          </div>
+          
+      </div>
+      
+          <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+          <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+
+  </body>
 </html>
