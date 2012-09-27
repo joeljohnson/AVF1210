@@ -24,6 +24,7 @@
 	<true/>
 	<key>ExternalHosts</key>
 	<array>
+		<string>*.google.com</string>
 		<string>*.jquerymobile.com</string>
 		<string>*.github.com</string>
 		<string>*.jquery.com</string>
