@@ -22,19 +22,31 @@ function onError(error){
 });
 
 //////////////////////////////////
-//   CODE FOR IOS GEOLOCATION   //
+//   CODE FOR IOS CAMERA        //
 //////////////////////////////////
+$('#ioscamera').live('pageinit' , function(){
+alert('Firing Camera Code');
+});
 
 
 //////////////////////////////////
-//   CODE FOR IOS GEOLOCATION   //
+//   CODE FOR IOS NETWORK       //
 //////////////////////////////////
+$('#iosnetwork').live('pageinit' , function(){
+alert('Firing Network Code');
+                     
+});
 
 //////////////////////////////////
-//   CODE FOR IOS GEOLOCATION   //
+//   CODE FOR IOS ACCELEROMETER //
 //////////////////////////////////
+$('#iosaccelerometer').live('pageinit' , function(){
+alert('Firing Accelerometer Code');
+});
 
 //////////////////////////////////
-//   CODE FOR IOS GEOLOCATION   //
+//   CODE FOR IOS EVENTS        //
 //////////////////////////////////
-
+$('#iosevents').live('pageinit' , function(){
+alert('Firing Event Code');
+});
