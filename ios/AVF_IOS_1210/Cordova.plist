@@ -24,6 +24,9 @@
 	<true/>
 	<key>ExternalHosts</key>
 	<array>
+		<string>*</string>
+		<string>maps.gstatic.com</string>
+		<string>maps.googleapis.com</string>
 		<string>*.google.com</string>
 		<string>*.jquerymobile.com</string>
 		<string>*.github.com</string>

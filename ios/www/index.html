@@ -12,6 +12,11 @@
         
         <!-- Script Tags -->
         <script type="text/javascript" charset="utf-8" src="cordova-2.1.0.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYeWT415JLbyHywDKQiATEyLljlzEx7E8&sensor=true"></script>
+        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+       <!-- <script src="js/jquery.ui.map.full.min.js" type="text/javascript"></script> -->
+
         
         
     </head>
@@ -70,6 +75,8 @@
             
             <div data-role="content">
                 <p>GEOLOCATION DEMO</p>
+                <div id="map_canvas" style="width:500px;height:500px"></div>
+
             </div>
             
             <div data-role="footer" data-position="fixed">
@@ -85,6 +92,10 @@
             
             <div data-role="content">
                 <p>CAMERA DEMO</p>
+                <div id="button" data-role="button">Click on button</div>
+                <div style="text-align:center;margin:20px;">
+                    <img id="cameraPic" src="" style="width:auto;height:120px;"></img>
+                </div>
             </div>
             
             <div data-role="footer" data-position="fixed">
@@ -100,6 +111,7 @@
             
             <div data-role="content">
                 <p>NETWORK DEMO</p>
+                <div id="connection"></div>
             </div>
             
             <div data-role="footer" data-position="fixed">
@@ -271,10 +283,8 @@
             </div>
             
         </div>
-        
-        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
+
         
     </body>
 </html>
