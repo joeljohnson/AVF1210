@@ -46,67 +46,7 @@ $('#iosgeo').live('pageshow', function(){
 //////////////////////////////////
 $('#ioscamera').live('pageinit' , function(){
 //alert('Firing Camera Code');
-/*                    $(".takeIt".bind("click", function(){
-//                                      takePicture();
-//                                      })
-//            document.addEventListener("deviceReady",onDeviceReady,false);
 
-            var pictureSource;
-            var destinationType;
-                     
-                     
-            function onDeviceReady(){
-                     pictureSource = navigator.camera.PictureSourceType;
-                     destinationType = navigator.camera.DestinationType;
-                     
-                     }
-            function onPhotoDataSuccess(imageData){
-                     var smallImage =document.getElementById('smallImage');
-                     smallImage.style.display = 'block';
-                     smallImage.src = "data:image/jpeg;base64," + imageData;
-                     var largeImage = document.getElementById('largeImage');
-                     largeImage.style.display = 'block';
-                     largeImage.src = imageURI;
-
-                     }
-            function takePicture(){
-                     navigator.camera.getPicture(onPhotoDataSuccess, onFail, {quality: 50});
-                     }
-            function getLocalPicture(source){
-                     navigator.camera.getPicture(onPhotoURISuccess,onFail, {quality: 50, destinationType: destinationType.FILE_URI, sourceType: source});
-                     }
-            function onFail(message) {
-                     alert('Failed because: ' + message);
-                     }*/
-                     
-                     $("#button").prev("a.ui-btn").unbind().click( function() {alert('button clicked');} )
-     
-
-                     function uploadPhoto(data){
-                     // this is where you would send the image file to server
-                     cameraPic.src = "data:image/jpeg;base64," + data;
-                     // Successful upload to the server
-                     navigator.notification.alert(
-                                                  'Your Photo has been uploaded',  // message
-                                                  okay,                           // callback
-                                                  'Photo Uploaded',              // title
-                                                  'OK'                          // buttonName
-                                                  );
-                     // upload has failed Fail
-                     /*
-                      if (failedToUpload){
-                      navigator.notification.alert(
-                      'Your Photo has failed to upload',
-                      failedDismissed,
-                      'Photo Not Uploaded',
-                      'OK'
-                      );
-                      }
-                      */
-                     }
-                     function okay(){
-                     // Do something
-                     }
 
 });
 
@@ -115,7 +55,6 @@ $('#ioscamera').live('pageinit' , function(){
 //   CODE FOR IOS NETWORK       //
 //////////////////////////////////
 $('#iosnetwork').live('pageinit' , function(){
-alert('Firing Network Code');
                       document.addEventListener("deviceready", onDeviceReady, false);
                       
                       // Cordova is loaded and it is now safe to make calls Cordova methods
@@ -125,18 +64,17 @@ alert('Firing Network Code');
                       }
                       
                       function checkConnection() {
-                      var networkState = navigator.network.connection.type;
+                      var networkType = navigator.network.connection.type;
                       
-                      var states = {};
-                      states[Connection.UNKNOWN]  = 'Alien Connection';
-                      states[Connection.ETHERNET] = 'Really a Wired connection?';
-                      states[Connection.WIFI]     = 'Oh, you know, the no wires connection in your house.';
-                      states[Connection.CELL_2G]  = 'Cell 2G connection';
-                      states[Connection.CELL_3G]  = 'Cell 3G connection';
-                      states[Connection.CELL_4G]  = 'Cell 4G connection';
-                      states[Connection.NONE]     = 'No network connection';
-                      $('#connection').append("You are connected via - " + states[networkState]);
-                      //alert('Connection type: ' + states[networkState]);
+                      var types = {};
+                      types[Connection.UNKNOWN]  = 'Alien Connection';
+                      types[Connection.ETHERNET] = 'Really a Wired connection?';
+                      types[Connection.WIFI]     = 'Oh, ya know, the no wires connection in your house.';
+                      types[Connection.CELL_2G]  = 'Cell 2G connection';
+                      types[Connection.CELL_3G]  = 'Cell 3G connection';
+                      types[Connection.CELL_4G]  = 'Cell 4G connection';
+                      types[Connection.NONE]     = 'No network connection';
+                      $('#connection').append("You are connected via - " + types[networkType]);
                       }
 
 });
@@ -146,11 +84,52 @@ alert('Firing Network Code');
 //////////////////////////////////
 $('#iosaccelerometer').live('pageinit' , function(){
 alert('Firing Accelerometer Code');
+                            var accel = null;
+                            document.addEventListener("deviceready", onDeviceReady, false);
+                            function onDeviceReady(){
+                            startWatching();
+                            }
+                            
+                            function startWatching() {
+                            var options = {frequency: 500};
+                            accel = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+                            
+                            }
+                            function stopWatching() {
+                            if (accel) {
+                            navigator.accelerometer.clearWatch(accel);
+                            accel = null;
+                            
+                                }
+                            }
+                            function onSuccess(acceleration) {
+                            var acceltag = document.getElementById('accelerometer');
+                            acceltag.innerHTML = 'X Axis: ' + acceleration.x + '<br/>' +
+                                                 'Y Axis: ' + acceleration.y + '<br/>' +
+                                                 'Y Axis: ' + acceleration.z + '<br/>';
+                            }
+                            function onError() {
+                            alert('There was an Error!');
+                            }
 });
 
 //////////////////////////////////
 //   CODE FOR IOS EVENTS        //
 //////////////////////////////////
-$('#iosevents').live('pageinit' , function(){
-alert('Firing Event Code');
+$('#ioscompass').live('pageinit' , function(){
+alert('Firing compass Code');
+                      document.addEventListener("deviceReady", onDeviceReady, false);
+                      function onDeviceReady(){
+                        navigator.compass.getCurrentHeading(onSuccess, onError);
+                      }
+                      function onSuccess(heading){
+                      var compasstag = document.getElementById('compass');
+                      compasstag.innerHTML = '<p>You\'re current heading is ' + heading.magneticHeading;
+                      
+                      }
+                      function onError(){
+                      alert('There was an error getting the compass heading');
+                      }
+                      var options = {frequency: 300};
+                      var watchID = navigator.compass.watchHeading(onSuccess, onError, options);
 });

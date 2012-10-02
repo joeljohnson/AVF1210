@@ -18,7 +18,7 @@ $('#iosgeo').live('pageshow', function(){
                                         zoom    : 14,
                                         mapTypeId: google.maps.MapTypeId.ROADMAP,
                                         center  : currentPosition
-                                    }
+                  };
                   
                   var myMap = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
                   var marker = new google.maps.Marker({
@@ -26,15 +26,15 @@ $('#iosgeo').live('pageshow', function(){
                                         map : myMap,
                                         title: "Here is your marker"
                                                       
-                                                    })
+                                                      });
                   marker.setMap(myMap);
 
-                  }
+                  };
                   
             function onError(error) {
                   alert('code: '    + error.code    + '\n' +
                         'message: ' + error.message + '\n');
-                  }
+                  };
 
                   
                 
@@ -46,34 +46,7 @@ $('#iosgeo').live('pageshow', function(){
 //////////////////////////////////
 $('#ioscamera').live('pageinit' , function(){
 //alert('Firing Camera Code');
-            var pictureSource;
-            var destinationType;
-                     
-            document.addEventListener("deviceReady",onDeviceReady,false);
-                     
-            function onDeviceReady(){
-                     pictureSource = navigator.camera.PictureSourceType;
-                     destinationType = navigator.camera.DestinationType;
-                     
-                     }
-            function onPhotoDataSuccess(imageData){
-                     var smallImage =document.getElementById('smallImage');
-                     smallImage.style.display = 'block';
-                     smallImage.src = "data:image/jpeg;base64," + imageData;
-                     var largeImage = document.getElementById('largeImage');
-                     largeImage.style.display = 'block';
-                     largeImage.src = imageURI;
 
-                     }
-            function takePicture(){
-                     navigatorcamera.getPicture(pnPhotoDataSuccess, onFail, {quality: 50});
-                     }
-            function getLocalPicture(source){
-                     navigator.camera.getPicture(onPhotoURISuccess,onFail, {quality: 50, destinationType: destinationType.FILE_URI, sourceType: source});
-                     }
-            function onFail(message) {
-                     alert('Failed because: ' + message);
-                     }
 
 });
 
@@ -82,7 +55,27 @@ $('#ioscamera').live('pageinit' , function(){
 //   CODE FOR IOS NETWORK       //
 //////////////////////////////////
 $('#iosnetwork').live('pageinit' , function(){
-alert('Firing Network Code');
+                      document.addEventListener("deviceready", onDeviceReady, false);
+                      
+                      // Cordova is loaded and it is now safe to make calls Cordova methods
+                      //
+                      function onDeviceReady() {
+                      checkConnection();
+                      }
+                      
+                      function checkConnection() {
+                      var networkType = navigator.network.connection.type;
+                      
+                      var types = {};
+                      types[Connection.UNKNOWN]  = 'Alien Connection';
+                      types[Connection.ETHERNET] = 'Really a Wired connection?';
+                      types[Connection.WIFI]     = 'Oh, ya know, the no wires connection in your house.';
+                      types[Connection.CELL_2G]  = 'Cell 2G connection';
+                      types[Connection.CELL_3G]  = 'Cell 3G connection';
+                      types[Connection.CELL_4G]  = 'Cell 4G connection';
+                      types[Connection.NONE]     = 'No network connection';
+                      $('#connection').append("You are connected via - " + types[networkType]);
+                      }
 
 });
 
@@ -91,11 +84,52 @@ alert('Firing Network Code');
 //////////////////////////////////
 $('#iosaccelerometer').live('pageinit' , function(){
 alert('Firing Accelerometer Code');
+                            var accel = null;
+                            document.addEventListener("deviceready", onDeviceReady, false);
+                            function onDeviceReady(){
+                            startWatching();
+                            }
+                            
+                            function startWatching() {
+                            var options = {frequency: 500};
+                            accel = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+                            
+                            }
+                            function stopWatching() {
+                            if (accel) {
+                            navigator.accelerometer.clearWatch(accel);
+                            accel = null;
+                            
+                                }
+                            }
+                            function onSuccess(acceleration) {
+                            var acceltag = document.getElementById('accelerometer');
+                            acceltag.innerHTML = 'X Axis: ' + acceleration.x + '<br/>' +
+                                                 'Y Axis: ' + acceleration.y + '<br/>' +
+                                                 'Y Axis: ' + acceleration.z + '<br/>';
+                            }
+                            function onError() {
+                            alert('There was an Error!');
+                            }
 });
 
 //////////////////////////////////
 //   CODE FOR IOS EVENTS        //
 //////////////////////////////////
-$('#iosevents').live('pageinit' , function(){
-alert('Firing Event Code');
+$('#ioscompass').live('pageinit' , function(){
+alert('Firing compass Code');
+                      document.addEventListener("deviceReady", onDeviceReady, false);
+                      function onDeviceReady(){
+                        navigator.compass.getCurrentHeading(onSuccess, onError);
+                      }
+                      function onSuccess(heading){
+                      var compasstag = document.getElementById('compass');
+                      compasstag.innerHTML = '<p>You\'re current heading is ' + heading.magneticHeading;
+                      
+                      }
+                      function onError(){
+                      alert('There was an error getting the compass heading');
+                      }
+                      var options = {frequency: 300};
+                      var watchID = navigator.compass.watchHeading(onSuccess, onError, options);
 });
