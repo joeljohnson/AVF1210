@@ -106,7 +106,7 @@ alert('Firing Accelerometer Code');
                             var acceltag = document.getElementById('accelerometer');
                             acceltag.innerHTML = 'X Axis: ' + acceleration.x + '<br/>' +
                                                  'Y Axis: ' + acceleration.y + '<br/>' +
-                                                 'Y Axis: ' + acceleration.z + '<br/>';
+                                                 'Z Axis: ' + acceleration.z + '<br/>';
                             }
                             function onError() {
                             alert('There was an Error!');
@@ -123,13 +123,16 @@ alert('Firing compass Code');
                         navigator.compass.getCurrentHeading(onSuccess, onError);
                       }
                       function onSuccess(heading){
-                      var compasstag = document.getElementById('compass');
-                      compasstag.innerHTML = '<p>You\'re current heading is ' + heading.magneticHeading;
-                      
+                      var pointer = $('#pointer');
+                      var pointerDirection = 360 - heading.magneticHeading;
+                      pointer.css ('-webkit-transform', 'rotate(' + pointerDirection + 'deg)');
                       }
                       function onError(){
                       alert('There was an error getting the compass heading');
+                      
                       }
                       var options = {frequency: 300};
                       var watchID = navigator.compass.watchHeading(onSuccess, onError, options);
+                      
+                      
 });

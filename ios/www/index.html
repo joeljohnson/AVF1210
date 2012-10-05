@@ -9,7 +9,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
-        
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+
         <!-- Script Tags -->
         <script type="text/javascript" charset="utf-8" src="cordova-2.1.0.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYeWT415JLbyHywDKQiATEyLljlzEx7E8&sensor=true"></script>
@@ -29,10 +30,10 @@
             </div>
             
             <div data-role="content">
-                <a href="#ios" data-role="button" data-transition="flip">iOS Native Features</a>
-                <a href="#android" data-role="button" data-transition="flip">Android Native Features</a>
-                <a href="#data-apis" data-role="button" data-transition="flip">Data APIs</a>
-                <a href="#research" data-role="button" data-transition="flip">Research Discussions</a>
+                <a href="#native" data-role="button">Native Features</a>
+                <a href="#data-apis" data-role="button">Data APIs</a>
+                <a href="#videos" data-role="button">Videos</a>
+                <a href="#research" data-role="button">Research Discussions</a>
 
                 
             </div>
@@ -44,7 +45,7 @@
         </div>
 <!-- iOS PAGE -->
         
-        <div data-role="page" id="ios"data-add-back-btn="true">
+        <div data-role="page" id="native"data-add-back-btn="true">
             
             <div data-role="header" data-position="fixed">
                 <h1>AVF - 1210 Joel J</h1>
@@ -143,9 +144,9 @@
                 <h1>AVF - 1210 Joel J</h1>
             </div>
             
-            <div data-role="content">
+            <div data-role="content" id="compass">
                 <p>Compass DEMO</p>
-                <div id="compass"></div>
+                <div><img id="pointer" src="img/pointer.jpg"></div>
             </div>
             
             <div data-role="footer" data-position="fixed">
@@ -154,105 +155,7 @@
             
         </div>
         
-<!-- Android PAGE -->
-        
-        <div data-role="page" id="android" data-add-back-btn="true">
-            
-            <div data-role="header" data-position="fixed" >
-                <h1>AVF - 1210 Joel J</h1>
-            </div>
-            
-            <div data-role="content">
-                <ul data-role="listview" data-theme="g">
-                    <li><a href="#androidgeo">GEOLOCATION DEMO</a></li>
-                    <li><a href="#androidcamera">CAMERA DEMO</a></li>
-                    <li><a href="#androidnetwork">NETWORK DEMO</a></li>
-                    <li><a href="#androidaccelerometer">ACCELEROMETER DEMO</a></li>
-                    <li><a href="#androidalerts">EVENTS DEMO</a></li>
-                </ul>
-            </div>
-            
-            <div data-role="footer" data-position="fixed">
-                <h2>Footer</h2>
-            </div>
-            
-        </div>
-    <!-- ANDROID SUB PAGES -->
-        <div data-role="page" id="androidgeo" data-add-back-btn="true">
-            
-            <div data-role="header" data-position="fixed" >
-                <h1>AVF - 1210 Joel J</h1>
-            </div>
-            
-            <div data-role="content">
-                <p>GEOLOCATION DEMO</p>
-            </div>
-            
-            <div data-role="footer" data-position="fixed">
-                <h2>Footer</h2>
-            </div>
-            
-        </div>
-        <div data-role="page" id="androidcamera" data-add-back-btn="true">
-            
-            <div data-role="header" data-position="fixed" >
-                <h1>AVF - 1210 Joel J</h1>
-            </div>
-            
-            <div data-role="content">
-                <p>CAMERA DEMO</p>
-            </div>
-            
-            <div data-role="footer" data-position="fixed">
-                <h2>Footer</h2>
-            </div>
-            
-        </div>
-        <div data-role="page" id="androidnetwork" data-add-back-btn="true">
-            
-            <div data-role="header" data-position="fixed" >
-                <h1>AVF - 1210 Joel J</h1>
-            </div>
-            
-            <div data-role="content">
-                <p>NETWORK DEMO</p>
-            </div>
-            
-            <div data-role="footer" data-position="fixed">
-                <h2>Footer</h2>
-            </div>
-            
-        </div>
-        <div data-role="page" id="androidaccelerometer" data-add-back-btn="true">
-            
-            <div data-role="header" data-position="fixed" >
-                <h1>AVF - 1210 Joel J</h1>
-            </div>
-            
-            <div data-role="content">
-                <p>ACCELEROMETER DEMO</p>
-            </div>
-            
-            <div data-role="footer" data-position="fixed">
-                <h2>Footer</h2>
-            </div>
-            
-        </div>
-        <div data-role="page" id="androidevents" data-add-back-btn="true">
-            
-            <div data-role="header" data-position="fixed" >
-                <h1>AVF - 1210 Joel J</h1>
-            </div>
-            
-            <div data-role="content">
-                <p>EVENTS DEMO</p>
-            </div>
-            
-            <div data-role="footer" data-position="fixed">
-                <h2>Footer</h2>
-            </div>
-            
-        </div>
+
 <!-- Data APIs -->
         <div data-role="page" id="data-apis" data-add-back-btn="true">
             
@@ -269,7 +172,23 @@
             </div>
             
         </div>
-        
+<!-- Videos PAGE -->
+        <div data-role="page" id="videos" data-add-back-btn="true">
+            
+            <div data-role="header" data-position="fixed" >
+                <h1>AVF - 1210 Joel J</h1>
+            </div>
+            
+            <div data-role="content">
+                <p>Reserved for videos</p>
+                <video src="http://player.vimeo.com/video/50277469" controls autoplay></video> 
+            </div>
+            
+            <div data-role="footer" data-position="fixed">
+                <h2>Footer</h2>
+            </div>
+            
+        </div>        
         
 <!-- Research PAGE -->
         <div data-role="page" id="research" data-add-back-btn="true">

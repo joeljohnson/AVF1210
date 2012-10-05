@@ -69,7 +69,7 @@ $('#iosnetwork').live('pageinit' , function(){
                       var types = {};
                       types[Connection.UNKNOWN]  = 'Alien Connection';
                       types[Connection.ETHERNET] = 'Really a Wired connection?';
-                      types[Connection.WIFI]     = 'Oh, ya know, the no wires connection in your house.';
+                      types[Connection.WIFI]     = 'Good Ol WiFi.';
                       types[Connection.CELL_2G]  = 'Cell 2G connection';
                       types[Connection.CELL_3G]  = 'Cell 3G connection';
                       types[Connection.CELL_4G]  = 'Cell 4G connection';
@@ -83,7 +83,7 @@ $('#iosnetwork').live('pageinit' , function(){
 //   CODE FOR IOS ACCELEROMETER //
 //////////////////////////////////
 $('#iosaccelerometer').live('pageinit' , function(){
-alert('Firing Accelerometer Code');
+//alert('Firing Accelerometer Code');
                             var accel = null;
                             document.addEventListener("deviceready", onDeviceReady, false);
                             function onDeviceReady(){
@@ -106,7 +106,7 @@ alert('Firing Accelerometer Code');
                             var acceltag = document.getElementById('accelerometer');
                             acceltag.innerHTML = 'X Axis: ' + acceleration.x + '<br/>' +
                                                  'Y Axis: ' + acceleration.y + '<br/>' +
-                                                 'Y Axis: ' + acceleration.z + '<br/>';
+                                                 'Z Axis: ' + acceleration.z + '<br/>';
                             }
                             function onError() {
                             alert('There was an Error!');
@@ -117,19 +117,22 @@ alert('Firing Accelerometer Code');
 //   CODE FOR IOS EVENTS        //
 //////////////////////////////////
 $('#ioscompass').live('pageinit' , function(){
-alert('Firing compass Code');
+//alert('Firing compass Code');
                       document.addEventListener("deviceReady", onDeviceReady, false);
                       function onDeviceReady(){
                         navigator.compass.getCurrentHeading(onSuccess, onError);
                       }
                       function onSuccess(heading){
-                      var compasstag = document.getElementById('compass');
-                      compasstag.innerHTML = '<p>You\'re current heading is ' + heading.magneticHeading;
-                      
+                      var pointer = $('#pointer');
+                      var pointerDirection = 360 - heading.magneticHeading;
+                      pointer.css ('-webkit-transform', 'rotate(' + pointerDirection + 'deg)');
                       }
                       function onError(){
                       alert('There was an error getting the compass heading');
+                      
                       }
                       var options = {frequency: 300};
                       var watchID = navigator.compass.watchHeading(onSuccess, onError, options);
+                      
+                      
 });

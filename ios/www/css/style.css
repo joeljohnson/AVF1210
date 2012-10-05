@@ -1,0 +1,10 @@
+#compass {
+background-color:white;
+}
+
+#pointer{
+    min-height: 10em;
+    display: table-cell;
+    vertical-align: middle;
+    
+}
