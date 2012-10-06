@@ -8,3 +8,7 @@ background-color:white;
     vertical-align: middle;
     
 }
+
+#homebuttons{
+	background-image:url('img/green.png');
+	}

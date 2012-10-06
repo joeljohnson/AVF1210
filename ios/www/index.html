@@ -16,6 +16,7 @@
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYeWT415JLbyHywDKQiATEyLljlzEx7E8&sensor=true"></script>
         <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
        <!-- <script src="js/jquery.ui.map.full.min.js" type="text/javascript"></script> -->
 
         
@@ -38,20 +39,22 @@
                 
             </div>
             
-            <div data-role="footer" data-position="fixed">
-                <h2>Footer</h2>
+            <div data-role="navbar" data-position="fixed">
+                <ul>
+                <li>
+                <a href="#home">Take me back Home</a></li></ul>
             </div>
             
         </div>
 <!-- iOS PAGE -->
         
-        <div data-role="page" id="native"data-add-back-btn="true">
+        <div data-role="page" id="native" data-add-back-btn="true">
             
             <div data-role="header" data-position="fixed">
                 <h1>AVF - 1210 Joel J</h1>
             </div>
             
-            <div data-role="content">
+            <div id="homebuttons" data-role="content">
                <ul data-role="listview" data-theme="g">
                    <li><a href="#iosgeo">GEOLOCATION DEMO</a></li>
                    <li><a href="#ioscamera">CAMERA DEMO</a></li>
@@ -62,8 +65,8 @@
                    
             </div>
             
-            <div data-role="footer" data-position="fixed">
-                <h2>Footer</h2>
+            <div data-role="navbar" data-position="fixed">
+                <ul> <li><a href="#home">Take me back Home</a></li></ul>
             </div>
             
         </div>
@@ -80,8 +83,8 @@
 
             </div>
             
-            <div data-role="footer" data-position="fixed">
-                <h2>Footer</h2>
+            <div data-role="navbar" data-position="fixed">
+                <ul> <li><a href="#home">Take me back Home</a></li></ul>
             </div>
             
         </div>
@@ -99,8 +102,8 @@
                 </div>
             </div>
             
-            <div data-role="footer" data-position="fixed">
-                <h2>Footer</h2>
+            <div data-role="navbar" data-position="fixed">
+                <ul> <li><a href="#home">Take me back Home</a></li></ul>
             </div>
             
         </div>
@@ -115,8 +118,8 @@
                 <div id="connection"></div>
             </div>
             
-            <div data-role="footer" data-position="fixed">
-                <h2>Footer</h2>
+            <div data-role="navbar" data-position="fixed">
+                <ul> <li><a href="#home">Take me back Home</a></li></ul>
             </div>
             
         </div>
@@ -133,8 +136,8 @@
                 </div>
             </div>
             
-            <div data-role="footer" data-position="fixed">
-                <h2>Footer</h2>
+            <div data-role="navbar" data-position="fixed">
+                <ul> <li><a href="#home">Take me back Home</a></li></ul>
             </div>
             
         </div>
@@ -149,8 +152,8 @@
                 <div><img id="pointer" src="img/pointer.jpg"></div>
             </div>
             
-            <div data-role="footer" data-position="fixed">
-                <h2>Footer</h2>
+            <div data-role="navbar" data-position="fixed">
+                <ul> <li><a href="#home">Take me back Home</a></li></ul>
             </div>
             
         </div>
@@ -164,11 +167,37 @@
             </div>
             
             <div data-role="content">
-                <p>Reserved for Data API demos</p>
+                <ul>
+                	<li><a href="#twitteriffic" data-role="button">Twitter API</a>
+                </ul>
             </div>
             
-            <div data-role="footer" data-position="fixed">
-                <h2>Footer</h2>
+            <div data-role="navbar" data-position="fixed">
+                <ul> <li><a href="#home">Take me back Home</a></li></ul>
+            </div>
+            
+        </div>
+        
+                <div data-role="page" id="twitteriffic" data-add-back-btn="true">
+            
+            <div data-role="header" data-position="fixed" >
+                <h1>AVF - 1210 Joel J</h1>
+            </div>
+            
+            <div data-role="content">
+                
+   <div style="padding: 20px;">
+        <input id="query" type="text" value="blue angels" />
+        <input id="submit" type="button" value="Search" />
+    </div>
+    <div id="tweets" style="padding: 20px;">
+        Tweets will go here.
+    </div>
+                
+            </div>
+            
+            <div data-role="navbar" data-position="fixed">
+                <ul> <li><a href="#home">Take me back Home</a></li></ul>
             </div>
             
         </div>
@@ -184,8 +213,8 @@
                 <video src=videos/AVF1210_Week2.mov" controls autoplay></video>
             </div>
             
-            <div data-role="footer" data-position="fixed">
-                <h2>Footer</h2>
+            <div data-role="navbar" data-position="fixed">
+                <ul> <li><a href="#home">Take me back Home</a></li></ul>
             </div>
             
         </div>        
@@ -201,8 +230,8 @@
                 <p>Reserved for RESEARCH /Discussion Links</p>
             </div>
             
-            <div data-role="footer" data-position="fixed">
-                <h2>Footer</h2>
+            <div data-role="navbar" data-position="fixed">
+                <ul> <li><a href="#home">Take me back Home</a></li></ul>
             </div>
             
         </div>
