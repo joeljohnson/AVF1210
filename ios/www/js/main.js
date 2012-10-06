@@ -140,19 +140,10 @@ alert('Firing compass Code');
 /////////////////////////////////
 //Code for Twiter Search API   //
 /////////////////////////////////
-$('#twits').live('pageinit' , function(){
+/*$('#twits').live('pageinit' , function(){
 	alert('Twitter magic here!');
 	
 
-//$(document).ready(function() {
-//    $('#submit').click(function() {
-//        var params = {
-//            q: $('#query').val(),
-//            rpp: 5
-  //      };
-        // alert(jQuery.param(params));
-  //      searchTwitter(params);
-   // });
-//});
+
 });​
-	
+	*/
