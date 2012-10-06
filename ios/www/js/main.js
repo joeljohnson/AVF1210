@@ -140,7 +140,7 @@ alert('Firing compass Code');
 /////////////////////////////////
 //Code for Twiter Search API   //
 /////////////////////////////////
-$('#twitteriffic').live('pageshow' , function(){
+$('#twits').live('pageinit' , function(){
 	alert('Twitter magic here!');
 	
 
