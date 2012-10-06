@@ -140,4 +140,6 @@ alert('Firing compass Code');
 /////////////////////////////////
 //Code for Twiter Search API   //
 /////////////////////////////////
-$('#ioscompass').live('pageinit' , function(){});
+$('#ioscompass').live('pageinit' , function(){
+	alert('test');
+	});
