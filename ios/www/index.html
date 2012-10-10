@@ -169,6 +169,7 @@
             <div data-role="content">
                 <ul>
                 	<li><a href="#twits" data-role="button">Twitter API</a>
+                    <li><a href="#discgolf" data-role="button">Disc Golf Course Review API</a></li>
                 </ul>
             </div>
             
@@ -186,10 +187,19 @@
             
             <div data-role="content">
                 
-               
-                    <input id="query" type="text" value="blue angels" />
-                    <input id="submit" type="button" value="Search" />
+               		<label for="query">Search for: </label>
+                    <input name="query" id="query" type="text" value="" />
+                    <label for="numtweets">Number of tweets to return :</label>
+                    <select name="numtweets" id="numtweets">
+                    	<option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                    </select>
+                    <input id="twitsubmit" type="button" value="Search" />
+                <div id="twitresults">
                 
+                </div>
 
                 
             </div>
@@ -200,7 +210,29 @@
             
         </div>
         
-        
+        <div data-role="page" id="discgolf" data-add-back-btn="true">
+            
+            <div data-role="header" data-position="fixed" >
+                <h1>AVF - 1210 Joel J</h1>
+            </div>
+            
+            <div data-role="content">
+                
+               		<label for="zipcode">Zipcode Search: </label>
+                    <input name="zipcode" id="zipcode" type="text" value="" />
+                    <input id="zipsubmit" type="button" value="Search" />
+                <div id="zipsearch">
+                
+                </div>
+
+                
+            </div>
+            
+            <div data-role="navbar" data-position="fixed">
+                <ul> <li><a href="#home">Take me back Home</a></li></ul>
+            </div>
+            
+        </div>
         
         
 <!-- Videos PAGE -->

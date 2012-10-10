@@ -1,3 +1,5 @@
+
+
 //////////////////////////////////
 //   CODE FOR IOS GEOLOCATION   //
 //////////////////////////////////
@@ -141,5 +143,57 @@ alert('Firing compass Code');
 //Code for Twiter Search API   //
 /////////////////////////////////
 $('#twits').live('pageinit' , function(){
-	alert('test');
-	});
+	//alert('test');
+	$('#twitsubmit').click(function(){
+		//alert($('#query').val());
+		
+		twitSearch();
+		});
+		function twitSearch(){
+			$.ajax({
+				url:'http://search.twitter.com/search.json?q='+ $('#query').val() + '&rpp=' + $('#numtweets').val(),
+				dataType:'jsonp',
+				success: function(json_results){
+					$('#twitresults ul').remove();
+					$('#twitresults').append('<ul data-role="listview"></ul><p>');
+					console.log(json_results);
+					listItems = $('#twitresults').find('ul');
+					$.each(json_results.results, function(key){
+						html ='<img src=' + json_results.results[key].profile_image_url +  '>';
+						html += '<h3><a href="#">' + json_results.results[key].text + '</a></h3><p>';
+						html += '<p>From: ' + json_results.results[key].from_user + '<p>Created: ' + json_results.results[key].created_at + '</p>';
+						listItems.append('<li>' + html + '</li>');
+						
+						});
+					$('#twitresults ul').listview();
+					
+					
+					
+					}
+				});
+			};
+});
+
+/////////////////////////////
+//  Code for DGCR API      //
+/////////////////////////////
+$('#discgolf').live('pageinit' , function(){
+	//alert('you clicked on the discgolf button');
+	$('#zipsubmit').click(function(){
+		dgZipSearch(); // call this function perform DGCR search and populate the page with results
+		});
+		function dgZipSearch(){
+			
+			alert('foo1');
+
+			$.ajax({
+				url:'http://www.dgcr-api.com/?key=e26cknv1vebce7sq2rpzp6bx&mode=findzip&zip=' + $('#zipcode').val() + '&rad=10&sig=0b3f68b37fbd0602f51c16236bcd2518',
+				dataType: 'jsonp',
+				success: function(zip_results){
+					console.log(zip_results);
+				}
+				
+				});
+				alert('foo2');
+		};
+});

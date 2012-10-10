@@ -1,0 +1,12 @@
+Create MD5 HASH with this   e26cknv1vebce7sq2rpzp6bx71iynulga9ma + mode
+
+key=e26cknv1vebce7sq2rpzp6bx
+
+Mode findzip
+sig=0b3f68b37fbd0602f51c16236bcd2518
+
+Mode near_rad
+sig=3bd451342cc34949499220d6ed54a0f2
+
+Mode crseinfo
+sig=b522eee4e5b48040d3b77d953c0d29b8
