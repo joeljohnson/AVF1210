@@ -187,10 +187,15 @@ $('#discgolf').live('pageinit' , function(){
 			alert('foo1');
 
 			$.ajax({
-				url:'http://www.dgcr-api.com/?key=e26cknv1vebce7sq2rpzp6bx&mode=findzip&zip=' + $('#zipcode').val() + '&rad=10&sig=0b3f68b37fbd0602f51c16236bcd2518',
-				dataType: 'jsonp',
+				url:'http://www.dgcr-api.com?key=e26cknv1vebce7sq2rpzp6bx&mode=findzip&zip=' + $('#zipcode').val() + '&rad=10&sig=0b3f68b37fbd0602f51c16236bcd2518',
+				dataType: 'json',
 				success: function(zip_results){
 					console.log(zip_results);
+					$.each(zip_results, function(){
+						$('#zipsearch').append("<li><h3>Course Name : " + this.name + "</h3></li>");
+						$('#zipsearch').append("<p>Holes : " + this.holes + "</p>");
+						$('#zipsearch').append("<p>Rating : <img src='"+  this.rating_img_small + "'/></p>");
+						})
 				}
 				
 				});
