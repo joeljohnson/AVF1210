@@ -183,8 +183,6 @@ $('#discgolf').live('pageinit' , function(){
 		dgZipSearch(); // call this function perform DGCR search and populate the page with results
 		});
 		function dgZipSearch(){
-			
-			alert('foo1');
 
 			$.ajax({
 				url:'http://www.dgcr-api.com?key=e26cknv1vebce7sq2rpzp6bx&mode=findzip&zip=' + $('#zipcode').val() + '&rad=10&sig=0b3f68b37fbd0602f51c16236bcd2518',
@@ -199,6 +197,5 @@ $('#discgolf').live('pageinit' , function(){
 				}
 				
 				});
-				alert('foo2');
 		};
 });
