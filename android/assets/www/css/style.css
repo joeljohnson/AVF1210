@@ -8,3 +8,20 @@ background-color:white;
     vertical-align: middle;
     
 }
+
+.ui-page {
+	background: transparent url('../img/green.png');
+	}
+	
+#ztext {
+	
+	color:#FFF;
+	font-size:24px;
+	font-weight:bold;
+	background-color:black;
+	padding:12px;
+	border-radius:15px;
+	
+	
+	
+	}

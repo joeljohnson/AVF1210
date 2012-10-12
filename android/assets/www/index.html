@@ -16,6 +16,7 @@
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYeWT415JLbyHywDKQiATEyLljlzEx7E8&sensor=true"></script>
         <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+        <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>-->
        <!-- <script src="js/jquery.ui.map.full.min.js" type="text/javascript"></script> -->
 
         
@@ -38,20 +39,22 @@
                 
             </div>
             
-            <div data-role="footer" data-position="fixed">
-                <h2>Footer</h2>
+            <div data-role="navbar" data-position="fixed">
+                <ul>
+                <li>
+                <a href="#home">Take me back Home</a></li></ul>
             </div>
             
         </div>
 <!-- iOS PAGE -->
         
-        <div data-role="page" id="native"data-add-back-btn="true">
+        <div data-role="page" id="native" data-add-back-btn="true">
             
             <div data-role="header" data-position="fixed">
                 <h1>AVF - 1210 Joel J</h1>
             </div>
             
-            <div data-role="content">
+            <div id="homebuttons" data-role="content">
                <ul data-role="listview" data-theme="g">
                    <li><a href="#iosgeo">GEOLOCATION DEMO</a></li>
                    <li><a href="#ioscamera">CAMERA DEMO</a></li>
@@ -62,8 +65,8 @@
                    
             </div>
             
-            <div data-role="footer" data-position="fixed">
-                <h2>Footer</h2>
+            <div data-role="navbar" data-position="fixed">
+                <ul> <li><a href="#home">Take me back Home</a></li></ul>
             </div>
             
         </div>
@@ -76,12 +79,12 @@
             
             <div data-role="content">
                 <p>GEOLOCATION DEMO</p>
-                <div id="map_canvas" style="width:250px;height:250px"></div>
+                <div id="map_canvas" style="width:500px;height:500px"></div>
 
             </div>
             
-            <div data-role="footer" data-position="fixed">
-                <h2>Footer</h2>
+            <div data-role="navbar" data-position="fixed">
+                <ul> <li><a href="#home">Take me back Home</a></li></ul>
             </div>
             
         </div>
@@ -99,8 +102,8 @@
                 </div>
             </div>
             
-            <div data-role="footer" data-position="fixed">
-                <h2>Footer</h2>
+            <div data-role="navbar" data-position="fixed">
+                <ul> <li><a href="#home">Take me back Home</a></li></ul>
             </div>
             
         </div>
@@ -115,8 +118,8 @@
                 <div id="connection"></div>
             </div>
             
-            <div data-role="footer" data-position="fixed">
-                <h2>Footer</h2>
+            <div data-role="navbar" data-position="fixed">
+                <ul> <li><a href="#home">Take me back Home</a></li></ul>
             </div>
             
         </div>
@@ -133,8 +136,8 @@
                 </div>
             </div>
             
-            <div data-role="footer" data-position="fixed">
-                <h2>Footer</h2>
+            <div data-role="navbar" data-position="fixed">
+                <ul> <li><a href="#home">Take me back Home</a></li></ul>
             </div>
             
         </div>
@@ -149,8 +152,8 @@
                 <div><img id="pointer" src="img/pointer.jpg"></div>
             </div>
             
-            <div data-role="footer" data-position="fixed">
-                <h2>Footer</h2>
+            <div data-role="navbar" data-position="fixed">
+                <ul> <li><a href="#home">Take me back Home</a></li></ul>
             </div>
             
         </div>
@@ -164,14 +167,74 @@
             </div>
             
             <div data-role="content">
-                <p>Reserved for Data API demos</p>
+                <ul>
+                	<li><a href="#twits" data-role="button">Twitter API</a>
+                    <li><a href="#discgolf" data-role="button">Disc Golf Course Review API</a></li>
+                </ul>
             </div>
             
-            <div data-role="footer" data-position="fixed">
-                <h2>Footer</h2>
+            <div data-role="navbar" data-position="fixed">
+                <ul> <li><a href="#home">Take me back Home</a></li></ul>
             </div>
             
         </div>
+        
+         <div data-role="page" id="twits" data-add-back-btn="true">
+            
+            <div data-role="header" data-position="fixed" >
+                <h1>AVF - 1210 Joel J</h1>
+            </div>
+            
+            <div data-role="content">
+                
+               		<label for="query">Search for: </label>
+                    <input name="query" id="query" type="text" value="" />
+                    <label for="numtweets">Number of tweets to return :</label>
+                    <select name="numtweets" id="numtweets">
+                    	<option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                    </select>
+                    <input id="twitsubmit" type="button" value="Search" />
+                <div id="twitresults">
+                
+                </div>
+
+                
+            </div>
+            
+            <div data-role="navbar" data-position="fixed">
+                <ul> <li><a href="#home">Take me back Home</a></li></ul>
+            </div>
+            
+        </div>
+        
+        <div data-role="page" id="discgolf" data-add-back-btn="true">
+            
+            <div data-role="header" data-position="fixed" >
+                <h1>AVF - 1210 Joel J</h1>
+            </div>
+            
+            <div data-role="content">
+                
+               		<label for="zipcode" id="ztext">Zipcode Search: </label>
+                    <input name="zipcode" id="zipcode" type="text" value="" />
+                    <input id="zipsubmit" type="button" value="Find Some Courses" />
+                <div id="zipsearch">
+                
+                </div>
+
+                
+            </div>
+            
+            <div data-role="navbar" data-position="fixed">
+                <ul> <li><a href="#home">Take me back Home</a></li></ul>
+            </div>
+            
+        </div>
+        
+        
 <!-- Videos PAGE -->
         <div data-role="page" id="videos" data-add-back-btn="true">
             
@@ -181,11 +244,11 @@
             
             <div data-role="content">
                 <p>Reserved for videos</p>
-                <video src="videos/AVF1210_Week2.mov" controls autoplay></video> 
+                <video src="videos/AVF1210_Week2.mov" controls autoplay></video>
             </div>
             
-            <div data-role="footer" data-position="fixed">
-                <h2>Footer</h2>
+            <div data-role="navbar" data-position="fixed">
+                <ul> <li><a href="#home">Take me back Home</a></li></ul>
             </div>
             
         </div>        
@@ -201,8 +264,8 @@
                 <p>Reserved for RESEARCH /Discussion Links</p>
             </div>
             
-            <div data-role="footer" data-position="fixed">
-                <h2>Footer</h2>
+            <div data-role="navbar" data-position="fixed">
+                <ul> <li><a href="#home">Take me back Home</a></li></ul>
             </div>
             
         </div>
