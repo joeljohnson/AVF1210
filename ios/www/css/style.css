@@ -25,3 +25,17 @@ background-color:white;
 	
 	
 	}
+#dpost {
+	background: white;
+	border:medium;
+	margin: 10px;
+	padding:10px;
+}
+
+	.gcdetail{
+	background: #CCC;
+	padding: 5px;
+	border-width: 50px;
+	border-color: black;
+
+		}

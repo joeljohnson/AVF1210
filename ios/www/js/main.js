@@ -178,21 +178,57 @@ $('#twits').live('pageinit' , function(){
 //  Code for DGCR API      //
 /////////////////////////////
 $('#discgolf').live('pageinit' , function(){
-	//alert('you clicked on the discgolf button');
+			
+//Button handlers
 	$('#zipsubmit').click(function(){
-		dgZipSearch(); // call this function perform DGCR search and populate the page with results
-		});
-		function dgZipSearch(){
+			dgZipSearch(); // call this function perform DGCR search and populate the page with results
+			});
+		
+		
+	$('#mapit').click(function(){
+			map_gcs();
+			});
+		
+// Map Function		
+function map_gcs(){
+			alert('bang bang!');
+
+			navigator.geolocation.getCurrentPosition(onSuccess, onError);
+			function onSuccess(position){
+				
+			var my_lat  = position.coords.latitude.toFixed(6);
+			var my_long = position.coords.longitude.toFixed(6);
+
+			alert(my_lat);
+			alert(my_long);
+			$.ajax({
+				url:'http://www.dgcr-api.com/?key=e26cknv1vebce7sq2rpzp6bx&mode=near_rad&lat=' + my_lat + '&lon=' + my_long + '&limit=5&rad=15&sig=3bd451342cc34949499220d6ed54a0f2',
+				dataType: 'json',
+				success: function(geo_results){
+					alert(geo_results);
+					$.each(geo_results, function(){
+						alert(this.name);
+						})
+					}
+				});
+
+				};
+			function onError(error){
+				alert('error');
+				};
+			};
+			
+//Zipsearch function			
+function dgZipSearch(){
 
 			$.ajax({
 				url:'http://www.dgcr-api.com?key=e26cknv1vebce7sq2rpzp6bx&mode=findzip&zip=' + $('#zipcode').val() + '&rad=10&sig=0b3f68b37fbd0602f51c16236bcd2518',
 				dataType: 'json',
 				success: function(zip_results){
-					console.log(zip_results);
+					alert(zip_results);
 					$.each(zip_results, function(){
-						$('#zipsearch').append("<li><h3>Course Name : " + this.name + "</h3></li>");
-						$('#zipsearch').append("<p>Holes : " + this.holes + "</p>");
-						$('#zipsearch').append("<p>Rating : <img src='"+  this.rating_img_small + "'/></p>");
+						$('#zipsearch').append("<div class='gcdetail'><li><h3>Course Name : " + this.name + "</h3></li><p>Holes : " + this.holes + "</p><p>Rating : <img src='"+  this.rating_img_small + "'/></p></div><br>");
+
 						})
 				}
 				
