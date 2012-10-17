@@ -191,32 +191,73 @@ $('#discgolf').live('pageinit' , function(){
 		
 // Map Function		
 function map_gcs(){
-			alert('bang bang!');
-
-			navigator.geolocation.getCurrentPosition(onSuccess, onError);
-			function onSuccess(position){
-				
-			var my_lat  = position.coords.latitude.toFixed(6);
-			var my_long = position.coords.longitude.toFixed(6);
+			//alert('bang bang!');
+	navigator.geolocation.getCurrentPosition(onSuccess, onError);
+	function onSuccess(position){
+			var my_lat = '47.132413'
+			var my_long = '-122.323455'	
+			//var my_lat  = position.coords.latitude.toFixed(6);
+			//var my_long = position.coords.longitude.toFixed(6);
 
 			alert(my_lat);
 			alert(my_long);
 			$.ajax({
 				url:'http://www.dgcr-api.com/?key=e26cknv1vebce7sq2rpzp6bx&mode=near_rad&lat=' + my_lat + '&lon=' + my_long + '&limit=5&rad=15&sig=3bd451342cc34949499220d6ed54a0f2',
-				dataType: 'json',
+				dataType:'json',
 				success: function(geo_results){
-					alert(geo_results);
-					$.each(geo_results, function(){
-						alert(this.name);
-						})
-					}
-				});
+					var latlongARR = [];
+					var currentLocation = new google.maps.LatLng(my_lat, my_long);
+					$.each(geo_results, function(id){
+							latlongARR.push({name:geo_results[id].name,lat:geo_results[id].latitude, long:geo_results[id].longitude});
+						});
+					//latlongARR.push({name:'You are Here',lat:my_lat,long:my_long})
+					console.log(latlongARR);
+					var mapOptions = {
+						zoom:10,
+						center: currentLocation,
+						mapTypeId: google.maps.MapTypeId.ROADMAP
+						};
+					var map = new google.maps.Map(document.getElementById('dgmap'), mapOptions);
+					var infowindow = new google.maps.InfoWindow(); 
 
-				};
+					var marker, i;
+					
+					for(i=0; i < latlongARR.length; i++){
+						
+						marker = new google.maps.Marker({
+							position: new google.maps.LatLng(latlongARR[i].lat, latlongARR[i].long),
+							map:map
+							});
+
+							google.maps.event.addListener(marker, 'click', (function(marker, i){
+                        return function(){
+                            infowindow.setContent(latlongARR[i].name);
+                            infowindow.open(map, marker);
+                        }
+                        })(marker,i));
+		
+						};
+						var currentMarker = new google.maps.Marker({
+							position:currentLocation,
+							map:map
+							});
+						iconFile = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
+						currentMarker.setIcon(iconFile);
+						currentMarker.setMap(map); 	
+					}
+			});	
+	};		
+};
+			
+			
+			
+			
+			
 			function onError(error){
-				alert('error');
+			alert('error');
 				};
-			};
+			
+			
 			
 //Zipsearch function			
 function dgZipSearch(){
