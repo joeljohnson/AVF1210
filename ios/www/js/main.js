@@ -177,7 +177,7 @@ $('#twits').live('pageinit' , function(){
 /////////////////////////////
 //  Code for DGCR API      //
 /////////////////////////////
-$('#discgolf').live('pageinit' , function(){
+$('#dgZipSearch').live('pageinit' , function(){
 			
 //Button handlers
 	$('#zipsubmit').click(function(){
@@ -190,17 +190,49 @@ $('#discgolf').live('pageinit' , function(){
 			});
 		
 // Map Function		
-function map_gcs(){
+
+			
+			
+			
+			
+			
+
+			
+			
+			
+//Zipsearch function			
+function dgZipSearch(){
+
+			$.ajax({
+				url:'http://www.dgcr-api.com?key=e26cknv1vebce7sq2rpzp6bx&mode=findzip&zip=' + $('#zipcode').val() + '&rad=10&sig=0b3f68b37fbd0602f51c16236bcd2518',
+				dataType: 'json',
+				success: function(zip_results){
+					//alert(zip_results);
+					$.each(zip_results, function(){
+						$('#zipsearch').append("<div class='gcdetail'><li><h3>Course Name : " + this.name + "</h3></li><p>Holes : " + this.holes + "</p><p>Rating : <img src='"+  this.rating_img_small + "'/></p></div><br>");
+
+						})
+				}
+				
+				});
+		};
+});
+
+//code for the GeoLocation Search
+
+$('#dgGeoSearch').live('pageinit' , function(){
+	//map_gcs();
+//function map_gcs(){
 			//alert('bang bang!');
 	navigator.geolocation.getCurrentPosition(onSuccess, onError);
 	function onSuccess(position){
-			var my_lat = '47.132413'
-			var my_long = '-122.323455'	
-			//var my_lat  = position.coords.latitude.toFixed(6);
-			//var my_long = position.coords.longitude.toFixed(6);
+			//var my_lat = '47.132413'
+			//var my_long = '-122.323455'	
+			var my_lat  = position.coords.latitude.toFixed(6);
+			var my_long = position.coords.longitude.toFixed(6);
 
-			alert(my_lat);
-			alert(my_long);
+			//alert(my_lat);
+			//alert(my_long);
 			$.ajax({
 				url:'http://www.dgcr-api.com/?key=e26cknv1vebce7sq2rpzp6bx&mode=near_rad&lat=' + my_lat + '&lon=' + my_long + '&limit=5&rad=15&sig=3bd451342cc34949499220d6ed54a0f2',
 				dataType:'json',
@@ -210,7 +242,6 @@ function map_gcs(){
 					$.each(geo_results, function(id){
 							latlongARR.push({name:geo_results[id].name,lat:geo_results[id].latitude, long:geo_results[id].longitude});
 						});
-					//latlongARR.push({name:'You are Here',lat:my_lat,long:my_long})
 					console.log(latlongARR);
 					var mapOptions = {
 						zoom:10,
@@ -243,36 +274,14 @@ function map_gcs(){
 							});
 						iconFile = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
 						currentMarker.setIcon(iconFile);
-						currentMarker.setMap(map); 	
+						currentMarker.setMap(map); 
+							
 					}
 			});	
 	};		
-};
+//};	
 			
-			
-			
-			
-			
-			function onError(error){
+		function onError(error){
 			alert('error');
-				};
-			
-			
-			
-//Zipsearch function			
-function dgZipSearch(){
-
-			$.ajax({
-				url:'http://www.dgcr-api.com?key=e26cknv1vebce7sq2rpzp6bx&mode=findzip&zip=' + $('#zipcode').val() + '&rad=10&sig=0b3f68b37fbd0602f51c16236bcd2518',
-				dataType: 'json',
-				success: function(zip_results){
-					alert(zip_results);
-					$.each(zip_results, function(){
-						$('#zipsearch').append("<div class='gcdetail'><li><h3>Course Name : " + this.name + "</h3></li><p>Holes : " + this.holes + "</p><p>Rating : <img src='"+  this.rating_img_small + "'/></p></div><br>");
-
-						})
-				}
-				
-				});
-		};
+				};	
 });

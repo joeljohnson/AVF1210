@@ -42,6 +42,7 @@
 		30A0434914DC770100060A13 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30A0434614DC770100060A13 /* Localizable.strings */; };
 		30E1352710E2C1420031B30D /* Cordova.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30E1352610E2C1420031B30D /* Cordova.plist */; };
 		30E5649213A7FCAF007403D8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E5649113A7FCAF007403D8 /* CoreMedia.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		9F5D4DB21630E81B004182D6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F5D4DB11630E81B004182D6 /* Default.png */; };
 		9FA77857161D4F9A00074D1D /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 9FA77856161D4F9A00074D1D /* style.css */; };
 		9FC7461E161252D200D04EC0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FC7461D161252D200D04EC0 /* Default-568h@2x.png */; };
 		9FCBDA221614C348009A1B28 /* main.js in Sources */ = {isa = PBXBuildFile; fileRef = 9FCBDA211614C348009A1B28 /* main.js */; };
@@ -106,6 +107,7 @@
 		30E5649113A7FCAF007403D8 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* AVF_IOS_1210-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVF_IOS_1210-Prefix.pch"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* AVF_IOS_1210-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "AVF_IOS_1210-Info.plist"; path = "../AVF_IOS_1210-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		9F5D4DB11630E81B004182D6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		9FA77856161D4F9A00074D1D /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = style.css; path = www/css/style.css; sourceTree = "<group>"; };
 		9FC7461D161252D200D04EC0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9FCBDA211614C348009A1B28 /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = main.js; path = www/js/main.js; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				9F5D4DB11630E81B004182D6 /* Default.png */,
 				9FA77856161D4F9A00074D1D /* style.css */,
 				9FCBDA211614C348009A1B28 /* main.js */,
 				9FC7461D161252D200D04EC0 /* Default-568h@2x.png */,
@@ -389,6 +392,7 @@
 				3088BBC2154F3926009F9C59 /* Default~iphone.png in Resources */,
 				9FC7461E161252D200D04EC0 /* Default-568h@2x.png in Resources */,
 				9FA77857161D4F9A00074D1D /* style.css in Resources */,
+				9F5D4DB21630E81B004182D6 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

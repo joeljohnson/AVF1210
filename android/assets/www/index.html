@@ -209,8 +209,26 @@
             </div>
             
         </div>
-        
         <div data-role="page" id="discgolf" data-add-back-btn="true">
+        	<div data-role="header" data-position="fixed">
+                 <h1>AVF - 1210 Joel J</h1>
+            </div>
+            <div data-role="content">
+            <h1> Search for Disc Golf Courses</h1>
+                <ul>
+                	<li><a href="#dgZipSearch" data-role="button">Search By Zipcode</a>
+                    <li><a href="#dgGeoSearch" data-role="button">Search by Location</a></li>
+                </ul>
+            
+            
+            </div>
+          	<div data-role="navbar" data-position="fixed">
+                <ul> <li><a href="#home">Take me back Home</a></li></ul>
+            </div>
+            
+        </div>
+        
+        <div data-role="page" id="dgZipSearch" data-add-back-btn="true">
             
             <div data-role="header" data-position="fixed" >
                 <h1>AVF - 1210 Joel J</h1>
@@ -222,7 +240,7 @@
                     <input name="zipcode" id="zipcode" type="text" value="" />
                     <input id="zipsubmit" type="button" value="Find Some Courses" />
                 <div id="zipsearch">
-                
+                <!-- This is the results list-->
                 </div>
 
                 
@@ -234,6 +252,22 @@
             
         </div>
         
+        <div data-role="page" id="dgGeoSearch" data-add-back-btn="true">
+            <div data-role="header" data-position="fixed" >
+                <h1>AVF - 1210 Joel J</h1>
+            </div>
+        
+        	<div data-role="content">
+                
+                <div id="dgmap">
+                <!-- insert map here -->
+                </div>
+            </div>
+             <div data-role="navbar" data-position="fixed">
+                <ul> <li><a href="#home">Take me back Home</a></li></ul>
+            </div>
+        </div>
+        
         
 <!-- Videos PAGE -->
         <div data-role="page" id="videos" data-add-back-btn="true">
@@ -243,8 +277,16 @@
             </div>
             
             <div data-role="content">
-                <p>Reserved for videos</p>
-                <video src="videos/AVF1210_Week2.mov" controls autoplay></video>
+                <p>Week 2 Video</p>
+                <video src="videos/AVF1210Week2_.mp4" type="video/m4v"  width="325" height="180" controls>
+                  Your browser does not support the <code>video</code> element.
+
+                </video>
+                <p>Week 3 Video</p>
+                <video src="videos/AVF1210Week3_.mp4" type="video/m4v"  width="325" height="180" controls>
+                  Your browser does not support the <code>video</code> element.
+
+                </video>
             </div>
             
             <div data-role="navbar" data-position="fixed">
@@ -261,7 +303,47 @@
             </div>
             
             <div data-role="content">
-                <p>Reserved for RESEARCH /Discussion Links</p>
+            <div class="dpost">
+            	<p>Weel 1 Discussion Post</p>
+                <p>Most Native features are only accessible by using a tool such as Phonegap. You can get geolocation by using some HTML5, but for true native features you need to implement a tool to translate such as phonegap / cordova.
+<p>I believe maps + photos would be a good pairing, my initial CRUD app was a Disc Golf App. Plotting local course details (Starting Pad to Basket for each hole) was one idea I had, and pairing that with Maps and Photos. Also a 'Find Nearest Course' was something I would like to attempt to implement. 
+Some Lessons learned form my past is to stay with it, don't give up so easy. Also working through each piece of code for a specific function reallt helps, instead of trying to do it all at once.</p>
+            </div>
+            <br>
+            <div class="dpost">
+            <p>Week 2 Discussion Post</p>
+            Big Fat Fail here. I did not get my research done on this subject.
+            </div>
+            <br>
+            <div class="dpost">
+                <p>Week 3 Discussion post</p>
+                <p>What are the 'top selling' app categories in the U.S.?
+                    <li>Productivity</li>
+                    <li>Tools</li>
+                    <li>Personalization</li>
+                    
+                    <p>What are the 'top selling' app categories in Japan ?
+                    <li>Productivity</li>
+
+                    <li>Games</li>
+                    <li>Tools</li>
+                    
+                    <p>What are the 'top selling' app categories inGreat Britain
+                    <li>Productivity</li>
+                    <li>Music</li>
+                    <li>Tools</li>
+                    <br>
+                    <p>So by looking at the Top Selling Apps and Categories in each market It appears the Productivity type apps get the mod attention. It also tells a small story about the different markets based of the number 2 spot. US users like tools to make things work the way they want them to on the device. Japan loves their gaming and Great Britain like to listen to their music on the device. 
+                    
+                    <p>What percentage of Android users have the latest/greatest OS in the U.S? in Japan? in Great Britain? How might these differences impact development?
+                    <p>So I was not able to find a recent breakdown of Android OS by country. 
+                    However Google provides stats for the overall user base.  Currently 2.3.3-2.3.7 (Gingerbread) is sitting at 55.5% (API 10). Ice Cream Sandwich 4.0.3 is coming on strong and is up to 23.7%. While targeting Gingerbread API 10 is probably the best strategy, its safe to say developing for the latest and greatest is probably the most desirable for Future apps. 
+                    Developing a "current" app should really target the largest installed base. 
+                    
+                    Targeting US users is probably the most lucrative based on the statistics researched. The Price of having a Mobile device and Data Access in the US is by far the "cheapest" and therefore has a wider range of users. 
+                    
+                    </p>
+                    </div>
             </div>
             
             <div data-role="navbar" data-position="fixed">

@@ -25,3 +25,47 @@ background-color:white;
 	
 	
 	}
+.dpost {
+	background: white;
+	border:medium;
+	margin: 10px;
+	padding:10px;
+}
+
+.gcdetail{
+	background: #CCC;
+	padding: 5px;
+	border-width: 50px;
+	border-color: black;
+
+}
+
+#dgmap {
+	width:100%;
+			height:100%; 
+			position: absolute; 
+			top: 0px; 
+			left: 0px; 
+			overflow: hidden;
+}
+
+h1{
+	color:#FFF;
+	font-size:24px;
+	font-weight:bold;
+	background-color:black;
+	padding:12px;
+	border-radius:15px;
+	
+	}
+@media only screen 
+and (max-device-width : 480px) {
+	h1{
+		color:#FFF;
+		font-size:16px;
+		background-color:black;
+		padding:6px;
+		border-radius:8px;
+	}
+
+}	

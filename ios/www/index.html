@@ -209,25 +209,40 @@
             </div>
             
         </div>
-        
         <div data-role="page" id="discgolf" data-add-back-btn="true">
+        	<div data-role="header" data-position="fixed">
+                 <h1>AVF - 1210 Joel J</h1>
+            </div>
+            <div data-role="content">
+            <h1> Search for Disc Golf Courses</h1>
+                <ul>
+                	<li><a href="#dgZipSearch" data-role="button">Search By Zipcode</a>
+                    <li><a href="#dgGeoSearch" data-role="button">Search by Location</a></li>
+                </ul>
+            
+            
+            </div>
+          	<div data-role="navbar" data-position="fixed">
+                <ul> <li><a href="#home">Take me back Home</a></li></ul>
+            </div>
+            
+        </div>
+        
+        <div data-role="page" id="dgZipSearch" data-add-back-btn="true">
             
             <div data-role="header" data-position="fixed" >
                 <h1>AVF - 1210 Joel J</h1>
             </div>
             
             <div data-role="content">
-                
-               		<label for="zipcode" id="ztext">Zipcode Search: </label>
-                    <input name="zipcode" id="zipcode" type="text" value="" />
-                    <input id="zipsubmit" type="button" value="Find Some Courses" />
+            <h1>Zipcode Search</h1>
+                <fieldset class="ui-grid-a">
+					<div class="ui-block-a"><input name="zipcode" id="zipcode" type="text" placeholder="Enter your 5 digit zip" value="" /></div>
+					<div class="ui-block-b"><input id="zipsubmit" type="button" value="Find Some Courses" /></div>	   
+				</fieldset>
+               		
                 <div id="zipsearch">
                 <!-- This is the results list-->
-                </div>
-                <input id="mapit" type="button" value="Map Closest Courses" />
-                
-                <div id="dgmap" style="width: 500px; height: 500px;">
-                
                 </div>
 
                 
@@ -237,6 +252,22 @@
                 <ul> <li><a href="#home">Take me back Home</a></li></ul>
             </div>
             
+        </div>
+        
+        <div data-role="page" id="dgGeoSearch" data-add-back-btn="true">
+            <div data-role="header" data-position="fixed" >
+                <h1>AVF - 1210 Joel J</h1>
+            </div>
+        
+        	<div data-role="content">
+                
+                <div id="dgmap">
+                <!-- insert map here -->
+                </div>
+            </div>
+             <div data-role="navbar" data-position="fixed">
+                <ul> <li><a href="#home">Take me back Home</a></li></ul>
+            </div>
         </div>
         
         
@@ -249,12 +280,12 @@
             
             <div data-role="content">
                 <p>Week 2 Video</p>
-                <video src="videos/AVF1210Week2_.mp4" type="video/m4v"  width="325" height="180"controls>
+                <video src="videos/AVF1210Week2_.mp4" type="video/m4v"  width="325" height="180" controls>
                   Your browser does not support the <code>video</code> element.
 
                 </video>
                 <p>Week 3 Video</p>
-                <video src="videos/AVF1210Week3_.mp4" type="video/m4v"  width="325" height="180"controls>
+                <video src="videos/AVF1210Week3_.mp4" type="video/m4v"  width="325" height="180" controls>
                   Your browser does not support the <code>video</code> element.
 
                 </video>
@@ -274,7 +305,13 @@
             </div>
             
             <div data-role="content">
-            
+            <div class="dpost">
+            	<p>Weel 1 Discussion Post</p>
+                <p>Most Native features are only accessible by using a tool such as Phonegap. You can get geolocation by using some HTML5, but for true native features you need to implement a tool to translate such as phonegap / cordova.
+<p>I believe maps + photos would be a good pairing, my initial CRUD app was a Disc Golf App. Plotting local course details (Starting Pad to Basket for each hole) was one idea I had, and pairing that with Maps and Photos. Also a 'Find Nearest Course' was something I would like to attempt to implement. 
+Some Lessons learned form my past is to stay with it, don't give up so easy. Also working through each piece of code for a specific function reallt helps, instead of trying to do it all at once.</p>
+            </div>
+            <br>
             <div class="dpost">
             <p>Week 2 Discussion Post</p>
             Big Fat Fail here. I did not get my research done on this subject.
