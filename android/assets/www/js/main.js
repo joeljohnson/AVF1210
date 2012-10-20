@@ -221,15 +221,15 @@ function dgZipSearch(){
 //code for the GeoLocation Search
 
 $('#dgGeoSearch').live('pageinit' , function(){
-	map_gcs();
-function map_gcs(){
+	//map_gcs();
+//function map_gcs(){
 			//alert('bang bang!');
 	navigator.geolocation.getCurrentPosition(onSuccess, onError);
 	function onSuccess(position){
-			var my_lat = '47.132413'
-			var my_long = '-122.323455'	
-			//var my_lat  = position.coords.latitude.toFixed(6);
-			//var my_long = position.coords.longitude.toFixed(6);
+			//var my_lat = '47.132413'
+			//var my_long = '-122.323455'	
+			var my_lat  = position.coords.latitude.toFixed(6);
+			var my_long = position.coords.longitude.toFixed(6);
 
 			//alert(my_lat);
 			//alert(my_long);
@@ -279,7 +279,7 @@ function map_gcs(){
 					}
 			});	
 	};		
-};	
+//};	
 			
 		function onError(error){
 			alert('error');

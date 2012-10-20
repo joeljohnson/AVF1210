@@ -55,7 +55,7 @@
             </div>
             
             <div id="homebuttons" data-role="content">
-               <ul data-role="listview" data-theme="g">
+               <ul data-role="listview">
                    <li><a href="#iosgeo">GEOLOCATION DEMO</a></li>
                    <li><a href="#ioscamera">CAMERA DEMO</a></li>
                    <li><a href="#iosnetwork">NETWORK DEMO</a></li>
@@ -235,10 +235,12 @@
             </div>
             
             <div data-role="content">
-                
-               		<label for="zipcode" id="ztext">Zipcode Search: </label>
-                    <input name="zipcode" id="zipcode" type="text" value="" />
-                    <input id="zipsubmit" type="button" value="Find Some Courses" />
+            <h1>Zipcode Search</h1>
+                <fieldset class="ui-grid-a">
+					<div class="ui-block-a"><input name="zipcode" id="zipcode" type="text" placeholder="Enter your 5 digit zip" value="" /></div>
+					<div class="ui-block-b"><input id="zipsubmit" type="button" value="Find Some Courses" /></div>	   
+				</fieldset>
+               		
                 <div id="zipsearch">
                 <!-- This is the results list-->
                 </div>
@@ -278,12 +280,12 @@
             
             <div data-role="content">
                 <p>Week 2 Video</p>
-                <video src="videos/AVF1210Week2_.mp4" type="video/m4v"  width="325" height="180" controls>
+                <video src="videos/AVF1210Week2_.mp4" type="video/m4v" controls>
                   Your browser does not support the <code>video</code> element.
 
                 </video>
                 <p>Week 3 Video</p>
-                <video src="videos/AVF1210Week3_.mp4" type="video/m4v"  width="325" height="180" controls>
+                <video src="videos/AVF1210Week3_.mp4" type="video/m4v" controls>
                   Your browser does not support the <code>video</code> element.
 
                 </video>
@@ -303,19 +305,23 @@
             </div>
             
             <div data-role="content">
-            <div class="dpost">
-            	<p>Weel 1 Discussion Post</p>
-                <p>Most Native features are only accessible by using a tool such as Phonegap. You can get geolocation by using some HTML5, but for true native features you need to implement a tool to translate such as phonegap / cordova.
-<p>I believe maps + photos would be a good pairing, my initial CRUD app was a Disc Golf App. Plotting local course details (Starting Pad to Basket for each hole) was one idea I had, and pairing that with Maps and Photos. Also a 'Find Nearest Course' was something I would like to attempt to implement. 
-Some Lessons learned form my past is to stay with it, don't give up so easy. Also working through each piece of code for a specific function reallt helps, instead of trying to do it all at once.</p>
+            <div><section>
+                            <p>Week 1 Discussion Post<br>
+                            Most Native features are only accessible by using a tool such as Phonegap. You can get geolocation by using some HTML5, but for true native features you need to implement a tool to translate such as phonegap / cordova.<br>
+            I believe maps + photos would be a good pairing, my initial CRUD app was a Disc Golf App. Plotting local course details (Starting Pad to Basket for each hole) was one idea I had, and pairing that with Maps and Photos. Also a 'Find Nearest Course' was something I would like to attempt to implement. 
+            Some Lessons learned form my past is to stay with it, don't give up so easy. Also working through each piece of code for a specific function reallt helps, instead of trying to do it all at once.</p>
+		</section>
             </div>
             <br>
-            <div class="dpost">
-            <p>Week 2 Discussion Post</p>
-            Big Fat Fail here. I did not get my research done on this subject.
+            <div>
+                <section>
+                     <p>Week 2 Discussion Post</p>
+                     Big Fat Fail here. I did not get my research done on this subject.
+                </section>
             </div>
             <br>
-            <div class="dpost">
+            <div>
+            	<section>
                 <p>Week 3 Discussion post</p>
                 <p>What are the 'top selling' app categories in the U.S.?
                     <li>Productivity</li>
@@ -343,6 +349,7 @@ Some Lessons learned form my past is to stay with it, don't give up so easy. Als
                     Targeting US users is probably the most lucrative based on the statistics researched. The Price of having a Mobile device and Data Access in the US is by far the "cheapest" and therefore has a wider range of users. 
                     
                     </p>
+                    </section>
                     </div>
             </div>
             

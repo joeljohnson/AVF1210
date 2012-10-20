@@ -25,7 +25,7 @@ background-color:white;
 	
 	
 	}
-.dpost {
+#research section {
 	background: white;
 	border:medium;
 	margin: 10px;
@@ -68,3 +68,31 @@ h1{
 	}
 
 }	
+
+ul > .ui-li {
+	background-color:black;
+	color:#FFF;
+	font-family:Tahoma, Geneva, sans-serif;
+	}
+@media only screen and (max-device-width : 480px) {
+	video {
+  width:20px;
+  height:auto; 
+  
+  		}
+	}
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+	video{
+		width: 600px;
+		height: 400px;	
+		}
+}
+		
+#videos p {
+	
+	background-color:white;
+	padding:4px;
+	border-radius:4px;
+	}
